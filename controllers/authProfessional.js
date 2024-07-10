@@ -85,29 +85,6 @@ export const register = async (req,res,next)=> {
 	}
 }
 
-// Controller action to create a new service provider with automatically captured location
-// export const register = async (req, res) => {
-// 	try {
-// 		const salt = bcrypt.genSaltSync(10);
-//  		const hash = bcrypt.hashSync(req.body.password, salt)
-
-// 	//   const { firstname, lastname, email, password:hash } = req.body;
-// 	  // Use Geolocation API to capture the location from the client's browser
-// 	  const { latitude, longitude } = req.body.location;
-// 	  const professional = await Professional.create({
-// 		firstname: req.body.firstname,
-// 		lastname: req.body.lastname,
-// 		email: req.body.email,
-// 		password: hash,
-// 		location: { type: 'Point', coordinates: [longitude, latitude] }
-// 	  });
-// 	  res.status(201).json({ success: true, data: professional });
-// 	} catch (error) {
-// 	  console.error('Error creating service provider:', error);
-// 	  res.status(500).json({ success: false, error: 'Server error' });
-// 	}
-//   };
-
 
 export const approval = async (req,res,next)=> {
 	try{

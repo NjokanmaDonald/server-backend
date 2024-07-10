@@ -91,22 +91,6 @@ export const createRequest = async (req, res) => {
   }
 };
 
-//   export const getRequests = async (req, res) => {
-// 	const { clientId, professionalId, status } = req.query;
-
-// 	try {
-// 	  const existingRequest = await Request.findOne({
-// 		clientId: clientId,
-// 		professionalId: professionalId,
-// 		status: status
-// 	  });
-
-// 	  res.status(200).json(existingRequest);
-// 	} catch (error) {
-// 	  console.error("Error retrieving existing request:", error);
-// 	  res.status(500).json({ message: "Internal server error" });
-// 	}
-//   };
 
 export const getRequests = async (req, res) => {
   const { clientId, professionalId, status } = req.query;
@@ -138,70 +122,6 @@ export const getRequests = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
-// export const createRequest = async (req,res,next) => {
-// 	const professionalId = req.params.professionalid
-// 	const clientId = req.params.clientid
-// 	try{
-// 		const newRequest = new Request(req.body)
-// 			try{
-// 				const professional = await Professional.findById(professionalId)
-// 				const savedRequest = await newRequest.save()
-// 					try{
-// 						await Professional.findByIdAndUpdate(professionalId, {$push: {requestInfo:{requests: savedRequest._id, client_id: clientId}},})
-// 						await Client.findByIdAndUpdate(clientId, {$push: {requestInfo:{requests: savedRequest._id, professional_id: professionalId}},})
-// 					}catch(err){
-// 						next(err)
-// 					}
-// 				res.status(200).json(savedRequest)
-
-// 				const mailOptions = {
-// 					from: {
-// 						name: "Server",
-// 						address: 'njokanmadon@gmail.com'
-// 					},
-// 					to: professional.email,
-// 					subject: "New Request",
-// 					text: "Hello There!",
-// 					html: "A new request has been made by a client. Log in to find more details..."
-// 				}
-
-// 				const sendMail = async (transporter, mailOptions) => {
-// 					try {
-// 						await transporter.sendMail(mailOptions)
-// 						console.log("Email has been sent!");
-// 					} catch (error) {
-// 						console.error(error);
-// 					}
-// 				}
-
-// 				sendMail(transporter, mailOptions)
-
-// 			} catch (err){
-// 				next(err);
-// 			}
-// 	}catch(err) {
-// 		next(err)
-// 	}
-// }
-
-// export const createRequest = async (req, res) => {
-// 	try {
-// 	  // Create a new request
-// 	  const newRequest = new Request({
-// 		clientId: req.body.clientId,
-// 		professionalId: req.body.professionalId,
-// 		status: "pending"
-// 	  });
-
-// 	  await newRequest.save();
-
-// 	  return res.status(201).json({ message: "Request created successfully." });
-// 	} catch (error) {
-// 	  console.error("Error creating request:", error);
-// 	  return res.status(500).json({ message: "Internal server error" });
-// 	}
-//   };
 
 export const acceptRequest = async (req, res, next) => {
   const requestId = req.params.requestid;

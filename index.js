@@ -62,39 +62,6 @@ app.use((err,req,res,next)=>{
 	})
 })
 
-// const io = new Server(server,{
-// 	cors :{
-// 	  origin : '*',
-// 	  credentials : true
-// 	}
-//   })
-
-//   global.onlineUsers = new Map();
-
-//   io.on("connection", (socket)=>{
-// 	console.log('connect to socket', socket.id);
-// 	global.chatSocket = socket;
-
-// 	socket.on("add-user", (userId)=>{
-// 	  onlineUsers.set(userId, socket.id);
-// 	})
-
-// 	socket.on("send-msg", (data)=>{
-// 	  const sendUnderSocket = onlineUsers.get(data.to);
-// 	  if(sendUnderSocket){
-// 		socket.to(sendUnderSocket).emit("msg-recieve", data.message)
-// 	  }
-// 	})
-
-// 	socket.on("send-notification", (data)=>{
-// 	  const sendUnderSocket = onlineUsers.get(data.to);
-// 	  if(sendUnderSocket){
-// 		socket.to(sendUnderSocket).emit("notification-recieve",data.message)
-// 	  }
-// 	})
-
-//   })
-
 app.listen(8800, ()=>{
 	connect()
 	console.log("Connected to backend")

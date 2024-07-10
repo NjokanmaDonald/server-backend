@@ -1,14 +1,6 @@
 import mongoose from "mongoose";
 
 const ChatSchema = new mongoose.Schema({
-    // clientParticipants: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Client' // Reference to Client model
-    // }],
-    // professionalParticipants: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Professional' // Reference to Professional model
-    // }],
     clientParticipant: {
         type: String,
         required: true

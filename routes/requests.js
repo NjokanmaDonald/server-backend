@@ -49,7 +49,5 @@ router.get("/:id", getRequest);
 //GET requests
 router.get("/", getRequests);
 
-// // //GET REQUESTS TO PROFESSIONAL
-// router.get('/r', getRequestToProfessional)
 
 export default router;

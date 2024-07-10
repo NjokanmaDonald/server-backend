@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const ClientSchema = new mongoose.Schema({
@@ -18,17 +19,13 @@ const ClientSchema = new mongoose.Schema({
 		type: String,
 		required:true
 	},
-	// address:{
-	// 	type: String,
-	// 	required: true
-	// },
 	country:{
 		type: String,
-		required: true,
+		// required: true,
 	},
 	city:{
 		type:String,
-		required: true,
+		// required: true,
 	},
 	profilePicture:{
 		type:String,
@@ -37,9 +34,6 @@ const ClientSchema = new mongoose.Schema({
 		type:String,
 		required: true,
 	},
-	// requests: {
-	// 	type:[String]
-	// },
 	requestInfo: {
 		requests: {type: String},
 		client_id: {type: String}

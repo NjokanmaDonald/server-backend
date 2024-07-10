@@ -20,7 +20,7 @@ const ProfessionalSchema = new mongoose.Schema({
     },
     profession: {
         type: String,
-        enum: ['Carpentry', 'Plumbing', 'Electrician', 'Cleaning'],
+        enum: ['Carpentry', 'Plumbing', 'Electrician', 'Cleaning', "IT"],
     },
     profilePicture: {
         type: String,

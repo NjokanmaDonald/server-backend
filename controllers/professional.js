@@ -112,25 +112,6 @@ export const getProfessional = async (req,res,next)=> {
 	}
 }
 
-// export const getProfessionals = async (req,res,next)=> {
-// 	const qProfession = req.query.profession;
-// 	try{
-// 		let professionals;
-
-// 		if(qProfession) {
-// 			professionals = await Professional.find({
-// 				profession: {
-// 					$in: [qProfession]
-// 				},
-// 			})
-// 		} else {
-// 			professionals = await Professional.find();
-// 		}
-// 		res.status(200).json(professionals)
-// 	} catch (err){
-// 		next(err);
-// 	}
-// }
 
 export const getProfessionals = async (req, res, next) => {
     const qProfession = req.query.profession;
